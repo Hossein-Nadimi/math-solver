@@ -4,9 +4,9 @@ const formElement = document.querySelector('#equation-form')
 
 // Regexp for matching the operators
 const paranthesisRegex = /\((?<equation>[^\(\)]*)\)/
-const exponentRegex = /(?<operand1>\d+\S*)\s*(?<operation>\^)\s*(?<operand2>\S*\d+)/
-const multiplyDivideRegex = /(?<operand1>\d+\S*)\s*(?<operation>[\/\*])\s*(?<operand2>\S*\d+)/
-const addSubtractRegex = /(?<operand1>\d+\s*)(?<operation>[\-\+])(?<operand2>\s*\d+)/
+const exponentRegex = /(?<operand1>\S+)\s*(?<operation>\^)\s*(?<operand2>\S+)/
+const multiplyDivideRegex = /(?<operand1>\S+)\s*(?<operation>[\/\*])\s*(?<operand2>\S+)/
+const addSubtractRegex = /(?<operand1>\S+)\s*(?<operation>(?<!e)[\-\+])\s*(?<operand2>\S+)/
 
 // Show results
 formElement.addEventListener('submit', e => {
